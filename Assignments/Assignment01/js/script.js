@@ -12,7 +12,7 @@ to overlap another circle (food) in order to grow bigger.
 
 // Constants defining key quantities
 const AVATAR_SIZE_GAIN = 50;
-const AVATAR_SIZE_LOSS = 1;
+const AVATAR_SIZE_LOSS = 0.7;
 
 // Avatar is an object defined by its properties
 let avatar = {
@@ -21,15 +21,18 @@ let avatar = {
   maxSize: 64,
   size: 64,
   active: true,
-  color: '#cccc55'
+  color: '#D64557'
 }
 
 // Food is an object defined by its properties
 let food = {
   x: 0,
   y: 0,
+  velocityx: 2,
+  velocityy: 2,
+  maxSpeed: 5,
   size: 64,
-  color: '#55cccc'
+  color: '#2EB5AE'
 }
 
 // preload()
@@ -46,7 +49,7 @@ function preload() {
 // Create the canvas, position the food, remove the cursor
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(500,500);
   positionFood();
   noCursor();
 }
@@ -65,11 +68,12 @@ function draw() {
   }
 
   // Otherwise we handle the game
-  background(0);
+  background(197, 196, 204);
   updateAvatar();
   checkCollision();
   displayAvatar();
   displayFood();
+  updateFood();
 }
 
 // updateAvatar()
@@ -132,4 +136,38 @@ function displayFood() {
 function positionFood() {
   food.x = random(0,width);
   food.y = random(0,height);
+}
+//  updateFood()
+//
+// Move food based on velocity
+// > Increase or "move" food's x and y positioning by adding food's velocityx/y to them.
+// Randomize food's velocities to a number between 0 - the Max Speed (5)
+//
+// If statements that catch and reposition the food if it goes out of bounds
+function updateFood() {
+  food.x += food.velocityx;
+  food.y += food.velocityy;
+  food.velocityx = random(0,food.maxSpeed);
+  food.velocityy = random(0,food.maxSpeed);
+
+//
+// If the food's x goes out of the canvas frame, reset it to a random position within the play area.
+  if (food.x < 0) {
+    food.x = random(0,width);
+  }
+
+  else if (food.x > width) {
+    food.x = random(0,width);
+  }
+
+//
+// If the food's y goes out of the canvas frame, reset it to a random position within the play area.
+
+  if (food.y < 0) {
+    food.y = random(0,height);
+  }
+
+  else if (food.y > height) {
+    food.y = random(0,height);
+  }
 }
