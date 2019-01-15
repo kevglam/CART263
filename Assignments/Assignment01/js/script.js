@@ -12,7 +12,7 @@ to overlap another circle (food) in order to grow bigger.
 
 // Constants defining key quantities
 const AVATAR_SIZE_GAIN = 50;
-const AVATAR_SIZE_LOSS = 0.7;
+const AVATAR_SIZE_LOSS = 0.5;
 
 // Avatar is an object defined by its properties
 let avatar = {
@@ -30,7 +30,7 @@ let food = {
   y: 0,
   velocityx: 2,
   velocityy: 2,
-  maxSpeed: 5,
+  maxSpeed: 15,
   size: 64,
   color: '#2EB5AE'
 }
@@ -145,10 +145,11 @@ function positionFood() {
 //
 // If statements that catch and reposition the food if it goes out of bounds
 function updateFood() {
+
   food.x += food.velocityx;
   food.y += food.velocityy;
-  food.velocityx = random(0,food.maxSpeed);
-  food.velocityy = random(0,food.maxSpeed);
+  food.velocityx = random(-20,food.maxSpeed);
+  food.velocityy = random(-20,food.maxSpeed);
 
 //
 // If the food's x goes out of the canvas frame, reset it to a random position within the play area.
