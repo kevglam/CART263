@@ -21,8 +21,8 @@ class Food extends Agent {
   move() {
       this.x += this.velocityx;
       this.y += this.velocityy;
-      this.velocityx = random(-5,food.maxSpeed);
-      this.velocityy = random(-5,food.maxSpeed);
+      this.velocityx = random(-5,foodArray.maxSpeed);
+      this.velocityy = random(-5,foodArray.maxSpeed);
   }
 
   reframe(){
