@@ -9,6 +9,7 @@ body {
   width: 800px;
   margin-left: 100px;
   margin-top: 100px;
+
 }
 div {
   margin-top: 1em;
@@ -20,4 +21,8 @@ div {
 .revealed {
   background-color: transparent;
   color: red
+}
+
+#secret2 {
+  text-align: center;
 }

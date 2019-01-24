@@ -40,7 +40,9 @@ function preload() {
 function setup() {
   createCanvas(600,600);
   avatar = new Avatar(mouseX,mouseY,AVATAR_MAX_SIZE,AVATAR_SIZE_LOSS_PER_FRAME)
+  for(let i = 0; i < 10; i++){
   foodArray.push (new Food(random(0,width),random(0,height),FOOD_MIN_SIZE,FOOD_MAX_SIZE,2,2));
+}
   noCursor();
 }
 
@@ -65,9 +67,9 @@ function draw() {
     foodArray[i].move();
     foodArray[i].reframe();
 
-    if (avatar.collide(foodArray)) {
-      avatar.eat(foodArray);
-      //console.log("hi");
+    if (avatar.collide(foodArray[i])) {
+      avatar.eat(foodArray[i]);
+      console.log("collided!");
     }
     //console.log("hi");
   }
