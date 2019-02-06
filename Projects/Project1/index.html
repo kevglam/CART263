@@ -19,17 +19,32 @@
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
 
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
   <!-- My script(s) -->
   <script src="js/script.js"></script>
 </head>
 
 <body>
-  <img id="intro" src="assets/images/intro.gif" alt="intro" height="400" width="600">
 
-  <button id="start">START!</button>
-  <button id="faster">FASTER!</button>
-  <button id="break">Breaktime!</button>
-  <!-- HTML would go here if needed. -->
-</body>
+  <embed src="assets/sounds/whip.wav" hidden="true" autostart="true" loop="false" class="whip" />
+  <embed src="assets/sounds/Parisian.mp3" hidden="true" autostart="true" loop="true" class="bgm" />
 
-</html>
+  <div id="title">
+    <img id="title" src="assets/images/title.jpg" alt="title" height="100" width="600">
+  </div>
+
+  <div id="scene">
+
+    <img id="intro" src="assets/images/stop.jpg" alt="intro" height="400" width="600">
+    <div>
+      <div id="buttonset">
+        <button id="stop">Stop</button>
+        <button id="push">Push</button>
+        <button id="break">Breaktime</button>
+        <button id="faster">FASTER!!!</button>
+      </div>
+      <!-- HTML would go here if needed. -->
+    </body>
+
+    </html>
