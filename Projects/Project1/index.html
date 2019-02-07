@@ -26,29 +26,39 @@
 </head>
 
 <body>
+  <!-- Embed Whip Cracking sound and Background Music -->
+<!--
+  <source src="assets/sounds/whip.wav" hidden="true" autostart="true" loop="false" class="whip" />
+-->
 
-  <embed src="assets/sounds/whip.wav" hidden="true" autostart="true" loop="false" class="whip" />
-  <embed src="assets/sounds/Parisian.mp3" hidden="true" autostart="true" loop="true" class="bgm" />
+  <audio autoplay loop volume="0.3">
+  <source src="assets/sounds/Parisian.mp3" hidden="true" class="bgm" />
+  </audio>
 
+  <!-- Display Top title -->
   <div id="title">
-    <img id="title" src="assets/images/title.jpg" alt="title" height="100" width="600">
+    <img id="title" src="assets/images/title2.jpg" alt="title" height="100" width="600">
   </div>
 
+  <!-- This is the div that contains the main scene image -->
   <div id="scene">
-
+    <!-- Display starting scene (Sisyphus standing in front of the boulder waiting to start push.) -->
     <img id="intro" src="assets/images/stop.jpg" alt="intro" height="400" width="600">
     <div>
+
+  <!-- This is the div that contains the buttons that the player can interact with. -->
       <div id="buttonset">
         <button id="stop">Stop</button>
         <button id="push">Push</button>
         <button id="break">Breaktime</button>
         <button id="faster">FASTER!!!</button>
       </div>
-
+      <!--
       Make Sisyphus Talk:
       <input type="text" name="dialogue">
       <input type="submit" value="Submit">
-      <!-- HTML would go here if needed. -->
-    </body>
+    -->
 
-    </html>
+  </body>
+
+  </html>
