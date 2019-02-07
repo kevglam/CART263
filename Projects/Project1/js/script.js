@@ -16,7 +16,6 @@ $(document).ready(function(){
   //$whip = $('#whip');
   //This is a timer to prompt the ending scene. In 10 hours the ending scene will play.
   let summitTime = setTimeout(summit, timer);
-  //Sisyphus's introduction speech. This code uses Responsive Voice to speak dialogue.
 
   //This is what happens when we click on the STOP button.
   $('#stop').on('click',function() {
@@ -38,7 +37,7 @@ $(document).ready(function(){
     //Replace scene with the Normal Speed walking gif.
     $("#intro").attr("src", "assets/images/normalspd.gif");
     //Responsive Voice Dialogue
-    responsiveVoice.speak("My name is Sisyphus, and I cannot wait to push this boulder! Up, Up and away!", "French Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("Fee, Fie, Fo! Thus I, Sisyphus, the boulder master!", "French Male", {rate: 1}, {volume: 1});
     responsiveVoice.speak("Let's get to work! I love this!", "French Male", {rate: 1}, {volume: 1});
   });
 
