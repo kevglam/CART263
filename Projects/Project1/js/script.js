@@ -5,18 +5,14 @@ let $intro;
 //Variables for the timer until the ending scene
 let timer;
 let timertemp;
-
 //let x = document.getElementById("whip");
 //let $whip;
-
-let x = document.getElementById("whip");
 
 $(document).ready(function(){
   //Variable that contains the main scene image
   $intro = $('#intro');
   //This is the starting timer value (10 hours)
   timer = 360000000;
-
   //$whip = $('#whip');
   //This is a timer to prompt the ending scene. In 10 hours the ending scene will play.
   let summitTime = setTimeout(summit, timer);
@@ -36,7 +32,6 @@ $(document).ready(function(){
     console.log(timer);
     clearTimeout(summitTime);
     summitTime = setTimeout(summit, timer);
-
   });
 
   //This is what happens when we click on the PUSH button.
@@ -45,7 +40,6 @@ $(document).ready(function(){
     $("#intro").attr("src", "assets/images/normalspd.gif");
     //Responsive Voice Dialogue
     responsiveVoice.speak("Haha. Let's get to work! I love this!", "French Male", {rate: 1}, {volume: 1});
-
   });
 
   //This is what happens when we click on the FASTER button.
@@ -54,9 +48,6 @@ $(document).ready(function(){
     $("#intro").attr("src", "assets/images/extremespd.gif");
     //Responsive Voice Dialogue
     responsiveVoice.speak("Sir, may I go a little slower? My Hair is on fire. But I'm.. I'm still happy. This is great. This is fine.", "French Male", {rate: 1}, {volume: 1});
-    //Play Whip Cracking sound effect
-   //$('#whip').play();
-
   });
 
   //What happens when we click on the BREAK button.
@@ -71,18 +62,14 @@ $(document).ready(function(){
     console.log(timer);
     clearTimeout(summitTime);
     summitTime = setTimeout(summit, timer);
-
   });
 
 
 });
-
 //This is the function that is called to replace the scene with the ending gif.
 //After 10 Hours of playing the game, Sisyphus finally reaches the top contrary to legends.
 function summit(){
   console.log("Summit");
   //Replace scene with the ending gif.
   $("#intro").attr("src", "assets/images/ending.gif");
-  //Responsive Voice Ending Dialogue
-  //responsiveVoice.speak("We made it to the summit! This is unbelievable!", "French Male", {rate: 1}, {volume: 1});
 }
