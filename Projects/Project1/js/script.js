@@ -2,6 +2,7 @@
 
 //Variable that contains the main scene image
 let $intro;
+let timer;
 //let x = document.getElementById("whip");
 //let $whip;
 
@@ -10,9 +11,10 @@ let x = document.getElementById("whip");
 $(document).ready(function(){
   //Variable that contains the main scene image
   $intro = $('#intro');
+  timer = 10000
   //$whip = $('#whip');
 
-  //let summitTime = setTimeout(summit, 10000);
+  let summitTime = setTimeout(summit, timer);
   //clearInterval(summitTime);
   //Sisyphus's introduction speech. This code uses Responsive Voice to speak dialogue.
   responsiveVoice.speak("My name is Sisyphus, and I cannot wait to push this boulder! Up, Up and away! Tell me when I can finally get started boss.", "French Male", {rate: 1}, {volume: 1});
@@ -42,7 +44,9 @@ $(document).ready(function(){
     //Responsive Voice Dialogue
     responsiveVoice.speak("Sir, may I go a little slower? My Hair is on fire. But I'm.. I'm still happy. This is great. This is fine.", "French Male", {rate: 1}, {volume: 1});
     //Play Whip Cracking sound effect
-    $('#whip').play()
+   $('#whip').play();
+
+    //timer = timer - 500;
 
   });
 
@@ -64,5 +68,5 @@ function summit(){
   //Replace scene with the ending gif.
   $("#intro").attr("src", "assets/images/ending.gif");
   //Responsive Voice Ending Dialogue
-  responsiveVoice.speak("We made it to the summit! This is unbelievable!", "French Male", {rate: 1}, {volume: 1});
+  //responsiveVoice.speak("We made it to the summit! This is unbelievable!", "French Male", {rate: 1}, {volume: 1});
 }
