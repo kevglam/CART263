@@ -2,6 +2,8 @@
 
 //Variable that contains the main scene image
 let $intro;
+//let $bgm;
+let bgm = $('#bgm');
 //Variables for the timer until the ending scene
 let timer;
 let timertemp;
@@ -36,6 +38,9 @@ $(document).ready(function(){
   $('#push').on('click',function() {
     //Replace scene with the Normal Speed walking gif.
     $("#intro").attr("src", "assets/images/normalspd.gif");
+    //Play Beginning sounds
+    $('audio#bgm')[0].play();
+    $('audio#whip')[0].play();
     //Responsive Voice Dialogue
     responsiveVoice.speak("Fee, Fie, Fo! Thus I, Sisyphus, the boulder master!", "French Male", {rate: 1}, {volume: 1});
     responsiveVoice.speak("Let's get to work! I love this!", "French Male", {rate: 1}, {volume: 1});
@@ -45,6 +50,8 @@ $(document).ready(function(){
   $('#faster').on('click',function() {
     //Replace scene with EXTREME SPEED gif.
     $("#intro").attr("src", "assets/images/extremespd.gif");
+    //Play whip cracking sound
+    $('audio#whip')[0].play();
     //Responsive Voice Dialogue
     responsiveVoice.speak("Sir, may I go a little slower? My Hair is on fire. But I'm.. I'm still happy. This is great. This is fine.", "French Male", {rate: 1}, {volume: 1});
   });
