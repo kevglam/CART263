@@ -1,0 +1,7 @@
+CART 263 - Kevin Lam Project 1: Happiness is Sisyphus?
+
+For my project on the myth of Sisyphus, I wanted to present his story in an optimistic light. In my interactive project, Sisyphus is more than happy to push the boulder up the hill. He's so deeply in love with the task, in contrast to the agony he suffers in his myth. I wanted to explore Albert Camus's idea on imagining Sisyphus as being happy to endure his punishment. As he accepted his own somber fate. But... Is it really such a sad and absurd fate? Is it not similar to our own as humans? We are constantly in an endless cycle of work and looking forward to what little happiness that we can stumble upon or plan. In Sisyphus's case, he looks forward to that moment of nearing the top of the mountain. Even though it falls right back down, momentarily he has a thought of joy thinking "What if?"
+
+My game has Sisyphus endlessly pushing a boulder up the mountain and expressing his joy for doing so. This prompts the user to think... Is Sisyphus really happy? Why is he so joyful? At first glance, my project seems to have Sisyphus in an eternal fight against the battle, but I mentioned that this is a happy take on his myth; And it is! In my project, if Sisyphus works hard enough and does not slack off*, he will achieve his goal of pushing the boulder up the mountain, only after a short shift of 10-hours.
+
+*: However... If Sisyphus decides to slack off or relax in the process, he shall be punished. The timer will restart and he will need to once again complete a full 10-hour shift and then some. 
