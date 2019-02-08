@@ -42,7 +42,7 @@ $(document).ready(function(){
     $('audio#bgm')[0].play();
     $('audio#whip')[0].play();
     //Responsive Voice Dialogue
-    responsiveVoice.speak("Fee, Fie, Fo! Thus I, Sisyphus, the boulder master!", "French Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("Fee, Fie, Fo! Thus I, Sisyphus, the boulder master!", "US English Male", {rate: 1}, {volume: 1});
     responsiveVoice.speak("Let's get to work! I love this!", "French Male", {rate: 1}, {volume: 1});
   });
 
