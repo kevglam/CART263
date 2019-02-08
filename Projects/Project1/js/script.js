@@ -24,7 +24,7 @@ $(document).ready(function(){
     //Replace scene with the STOP image.
     $("#intro").attr("src", "assets/images/stop.jpg");
     //Responsive Voice Dialogue
-    responsiveVoice.speak("We stopping? I want to push more! I must reach the top!", "US English Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("We stopping? I want to push more! I must reach the top!", "US English Male", {rate: 1}, {volume: 2});
 
     //Restart timer and adds more time if you stop pushing
     timertemp = timer + 1000;
@@ -42,8 +42,8 @@ $(document).ready(function(){
     $('audio#bgm')[0].play();
     $('audio#whip')[0].play();
     //Responsive Voice Dialogue
-    responsiveVoice.speak("Fee, Fie, Fo! I Sisyphus, am the boulder master!", "US English Male", {rate: 1}, {volume: 1});
-    responsiveVoice.speak("Let's get to work! I love this!", "US English Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("Fee, Fie, Fo! I Sisyphus, am the boulder master!", "US English Male", {rate: 1}, {volume: 2});
+    responsiveVoice.speak("Let's get to work! I love this!", "US English Male", {rate: 1}, {volume: 2});
   });
 
   //This is what happens when we click on the FASTER button.
@@ -53,7 +53,7 @@ $(document).ready(function(){
     //Play whip cracking sound
     $('audio#whip')[0].play();
     //Responsive Voice Dialogue
-    responsiveVoice.speak("Sir, may I go a little slower? My Hair is on fire. But I'm.. I'm still happy. This is great. This is fine.", "US English Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("Sir, may I go a little slower? My Hair is on fire. But I'm.. I'm still happy. This is great. This is fine.", "US English Male", {rate: 1}, {volume: 2});
   });
 
   //What happens when we click on the BREAK button.
@@ -61,7 +61,7 @@ $(document).ready(function(){
     //Replace scene with breaktime gif.
     $("#intro").attr("src", "assets/images/breaktime.jpg");
     //Responsive Voice Dialogue
-    responsiveVoice.speak("Yay! Break time! Time to drink this lovely glass of orange juice. It's so orange. More Orange than oranges could ever be. I should get back to work though. This boulder is not gonna push itself.", "US English Male", {rate: 1}, {volume: 1});
+    responsiveVoice.speak("Yay! Break time! Time to drink this lovely glass of orange juice. It's so orange. More Orange than oranges could ever be. I should get back to work though. This boulder is not gonna push itself.", "US English Male", {rate: 1}, {volume: 2});
     //Restart timer and adds more time if you take a break.
     timertemp = timer + 1000;
     timer = timertemp;
