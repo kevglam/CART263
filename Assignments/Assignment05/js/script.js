@@ -178,42 +178,49 @@ $(document).ready(setup);
 function setup() {
   $('#click-to-begin').on('click',startGame);
 }
+//This displays our initial Score: text + the current Score
 $('#score').html("Score: " + scoreKeeper);
+
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
+    //What happens when the user says "Say it again."
+    //Annyang prompts the responsive Voice to repeat the clue.
     'Say it again': function() {
-      responsiveVoice.speak("Stop Stalling. It's...",'UK English Male');
+      responsiveVoice.speak("Say it again. Say it again.",'UK English Male', {pitch: 2});
+      responsiveVoice.speak("You idiot.",'UK English Male',);
       speakAnimal(correctAnimal);
     },
 
+    //What happens when the user says "I Give up."
+    //Annyang prompts to remove all current guesses and starts a new round
     'I give up': function() {
-      responsiveVoice.speak("idiot.",'UK English Male');
+      responsiveVoice.speak("Simpleton! How about this one?",'UK English Male');
       $('.guess').remove();
       newRound();
-  },
+    },
 
-  'It is *tag': function(tag) {
-  if (tag === correctAnimal){
-    $('.guess').remove();
-    newRound();
-    scoreKeeper++;
-    console.log(scoreKeeper);
-    $('#score').html("Score: " + scoreKeeper);
+    //What happens when the user answers with "It is.." + the animal.
+    //If they get it right, a new round starts and the score increments.
+    //If they get it wrong, then ResponsiveVoice will have a snappy response.
+    'It is *tag': function(tag) {
+      if (tag === correctAnimal){
+        $('.guess').remove();
+        newRound();
+        scoreKeeper++;
+        console.log(scoreKeeper);
+        $('#score').html("Score: " + scoreKeeper);
+      }
+      else {
+        responsiveVoice.speak("Wrong.. as always.",'UK English Male');
+      }
+    }
   }
-  else{
-    responsiveVoice.speak("Wrong.. as always",'UK English Male');
-  }
-
-}
-}
-
-    annyang.addCommands(commands);
-
-
-// Start listening. You can call this here, or attach this call to an event, button, etc.
-annyang.start();
-  };
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+};
 
 
 // startGame()
