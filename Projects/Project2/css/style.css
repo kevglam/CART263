@@ -1,0 +1,28 @@
+/*********************************************
+
+This is the style file for this project.
+
+**********************************************/
+body {
+  background-color: #3D2026;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  
+}
+
+#click-to-begin {
+  text-align: center;
+  color: white;
+}
+
+#videoTitle {
+  text-align: center;
+  color: white;
+}
+
+#tv {
+  text-align: center;
+}

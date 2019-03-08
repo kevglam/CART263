@@ -3,7 +3,7 @@
 /*****************
 
 Slamina
-rraB nippiP
+Kevin Lam
 
 A simple guessing game based on voice synthesis. The computer reads out an
 animal name, but it reads it backwards. The user selects the animal they
