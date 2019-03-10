@@ -77,15 +77,35 @@ let target = [
 ];
 
 let videoTitle = [];
-
+let bgm = $('#bgm');
+let laugh = $('#laugh');
 let babyAffection = 10;
 let babySanity = 10;
+let timer;
+let stopCry;
 
 $(document).ready(setup);
 
+let counter = 360;
+let updateInterval = 1000; //Update rate
+let countdown = setInterval(function () { 
+    counter = counter - 1;
+    $('#counter').text("Time until Adulthood: " + counter);
+  },updateInterval);
+timer = 360000;
+affectionTimer = 2000
+stopCry = 5000
+
+
+let peaceTime = setTimeout(peace, timer);
+let affectionTime = setTimeout(hell, timer);
+
 function setup() {
   $('#click-to-begin').on('click',startGame);
+  $('#1').on('click', babyTube);
+  $('#2').on('click', playB);
 }
+
 
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
@@ -159,8 +179,43 @@ function startGame() {
 
 }
 
+function babyTube(){
+  console.log("BABYTUBE");
+}
+
+function playB(){
+  console.log("play with baby");
+  $('audio#bgm')[0].pause();
+  $('audio#laugh')[0].play();
+  let momentOfPeace = setTimeout(moment, stopCry);
+
+}
+
 function addText (label){
   let $entry = $('<div class="vidtitle"></div>');
 // Set the text in the div to our label
 $entry.text(label);
+}
+
+function peace(){
+  console.log("Peace");
+  //Replace scene with the ending gif.
+
+}
+
+function moment(){
+  console.log("moment");
+  $('audio#laugh')[0].pause();
+  $('audio#bgm')[0].play();
+
+}
+
+function hell(){
+  console.log("hell");
+  babyAffection--;
+  babySanity--;
+  clearTimeout(affectionTime);
+  affectionTime = setTimeout(hell, affectionTimer);
+  //Replace scene with the ending gif.
+
 }
