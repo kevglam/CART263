@@ -98,7 +98,7 @@ stopCry = 5000
 
 
 let peaceTime = setTimeout(peace, timer);
-let affectionTime = setTimeout(hell, timer);
+let affectionTime = setTimeout(hell, affectionTimer);
 
 function setup() {
   $('#click-to-begin').on('click',startGame);
@@ -111,24 +111,72 @@ if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     //What happens when the user says "YES"
-    'Yes': function() {
-      nextShow();
+    'Its okay': function() {
+      if (babyAffection < 10){
       babyAffection++;
+      }
+      if (babySanity < 10){
+      babySanity++;
+      }
+
+      else {
+        console.log("your baby loves you so much!")
+      }
+      $('audio#bgm')[0].pause();
+
+      let momentOfPeace = setTimeout(moment, stopCry);
     },
 
     //What happens when the user says "NO"
-    'No': function() {
-      responsiveVoice.speak("Say it again. Say it again.",'UK English Male', {pitch: 2});
-      nextShow();
-      babyAffection--;
-      babySanity--;
+    'Stop Crying cutie': function() {
+      if (babyAffection < 10){
+      babyAffection++;
+      }
+      if (babySanity < 10){
+      babySanity++;
+      }
+
+      else {
+        console.log("your baby loves you so much!")
+      }
+      $('audio#bgm')[0].pause();
+
+      let momentOfPeace = setTimeout(moment, stopCry);
     },
 
     'I Love You': function() {
-      responsiveVoice.speak("Say it again. Say it again.",'UK English Male', {pitch: 2});
+      if (babyAffection < 10){
       babyAffection++;
+      }
+      if (babySanity < 10){
       babySanity++;
-    }
+      }
+
+      else {
+        console.log("your baby loves you so much!")
+      }
+      $('audio#bgm')[0].pause();
+      $('audio#laugh')[0].play();
+
+      let momentOfPeace = setTimeout(moment, stopCry);
+    },
+
+    'Boo': function() {
+      if (babyAffection < 10){
+      babyAffection++;
+      }
+      if (babySanity < 10){
+      babySanity++;
+      }
+
+      else {
+        console.log("your baby loves you so much!")
+      }
+      $('audio#bgm')[0].pause();
+      $('audio#laugh')[0].play();
+
+      let momentOfPeace = setTimeout(moment, stopCry);
+    },
 
   }
   // Add our commands to annyang
@@ -185,6 +233,16 @@ function babyTube(){
 
 function playB(){
   console.log("play with baby");
+  if (babyAffection < 10){
+  babyAffection++;
+  }
+  if (babySanity < 10){
+  babySanity++;
+  }
+
+  else {
+    console.log("your baby loves you so much!")
+  }
   $('audio#bgm')[0].pause();
   $('audio#laugh')[0].play();
   let momentOfPeace = setTimeout(moment, stopCry);
@@ -205,17 +263,26 @@ function peace(){
 
 function moment(){
   console.log("moment");
-  $('audio#laugh')[0].pause();
+
   $('audio#bgm')[0].play();
+    $('audio#laugh')[0].pause();
 
 }
 
 function hell(){
   console.log("hell");
+  if(babyAffection > 0 || babySanity > 0) {
   babyAffection--;
   babySanity--;
+  }
+  else {
+    console.log("your baby hates you");
+  }
   clearTimeout(affectionTime);
   affectionTime = setTimeout(hell, affectionTimer);
+
+  console.log(babyAffection);
+  console.log(babySanity);
   //Replace scene with the ending gif.
 
 }
