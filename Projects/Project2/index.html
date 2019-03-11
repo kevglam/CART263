@@ -27,26 +27,36 @@
 </head>
 
 <body>
+  <!-- Title! -->
   <h1> Welcome to Hell on earth. You chose this life! </h1>
   <center>
+    <!-- Countdown timer -->
     <h2> <div id="counter">  </div> </h2>
-
+    <!-- The premise of the game -->
     <div id="premise"> Keep your baby happy until then! Otherwise, he might resent you when he grows up... </div>
   </center>
-
+  <!-- Baby crying sound -->
   <audio autoplay loop id= "bgm">
     <source src="assets/sounds/babycry.mp3" hidden="true"  class="bgm" />
   </audio>
-
+  <!-- Baby laughing sound -->
   <audio id= "laugh">
     <source src="assets/sounds/laugh.mp3" hidden="true" loop="false" class="laugh" />
   </audio>
-
+  <!-- The main game area -->
   <div id="tv">
-    <img id="1" src="assets/images/button1.png"> <img id="2" src="assets/images/button2.png"> <img id="3" src="assets/images/button3.png"> </div>
+    <!-- Player's buttons -->
+    <img id="1" src="assets/images/button1.png" height="226" width="250"> <img id="2" src="assets/images/button2.png" height="226" width="250"> <img id="3" src="assets/images/button3.png" height="226" width="250"> </div>
+    <!-- This holds the video title -->
     <div id="videoTitle"></div>
+    <!-- A click to begin button -->
     <div id="click-to-begin">Click here to begin.</div>
-
+    <!-- This is instructions to let the player know what sentences the baby can understand -->
+    <div id="Talk"> Baby's known phrases
+      <p> </p>  I Love You! <p> </p> It's Okay <p> </p> Stop Crying Cutie <p> </p> Boo! </div>
+    </div>
+    <!-- This holds the ending text for the end game -->
+    <div id="endingText"></div>
 
     <!-- HTML would go here if needed. -->
   </body>

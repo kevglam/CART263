@@ -17,13 +17,41 @@ h1 {
 #click-to-begin {
   text-align: center;
   color: black;
+  font-size: 2em;
+  margin-top: 40px;
+  font-family: sans-serif;
 }
 
 #videoTitle {
   text-align: center;
+  color: red;
+  font-family: sans-serif;
+  font-size: 2em;
+}
+
+#endingText {
+  text-align: center;
   color: black;
+  font-size: 3em;
+  margin-top: 200px;
+  font-family: sans-serif;
 }
 
 #tv {
   text-align: center;
+}
+
+#counter {
+  font-family: sans-serif;
+}
+
+#premise {
+  font-family: sans-serif;
+}
+
+#Talk {
+  font-family: sans-serif;
+  color: #c13ead;
+  text-align: center;
+  margin-top: 20px;
 }
