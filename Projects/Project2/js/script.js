@@ -134,6 +134,7 @@ function setup() {
   $('#2').on('click', playB);
 }
 
+$('audio#bgm')[0].play();
 //Annyang voice recognition!
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
