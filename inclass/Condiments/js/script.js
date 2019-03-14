@@ -15,6 +15,8 @@ $(document).ready(setup);
 
 function setup() {
   $.getJSON('assets/data.json',dataLoaded);
+  //  $.getJSON('assets/newspapers.json',dataLoaded);
+
 }
 
 function dataLoaded(data){
@@ -48,21 +50,29 @@ function dataLoaded(data){
   }
 
   let room = getRandomElement(data.rooms);
-    console.log(room);
+  console.log(room);
 
-    let anaroom = "a";
+  let anaroom = "a";
 
-    if (room.charAt(0) === 'a' || room.charAt(0) === 'o' || room.charAt(0) === 'e' || room.charAt(0) === 'i' || room.charAt(0) === 'u'){
-      anaroom = "an";
-    }
+  if (room.charAt(0) === 'a' || room.charAt(0) === 'o' || room.charAt(0) === 'e' || room.charAt(0) === 'i' || room.charAt(0) === 'u'){
+    anaroom = "an";
+  }
 
-    else {
-      anaroom = "a";
-    }
+  else {
+    anaroom = "a";
+  }
+
+  //let news = getRandomElement(data.newspapers);
+  //console.log(news);
 
   //  let description =
 
-    $("#description").text(condiment + " " + verb + " like " + ana + " " + cat + " in " + anaroom + " " + room + ".");
+  $("#description").text(condiment + " " + verb + " like " + ana + " " + cat + " in " + anaroom + " " + room + ".");
+
+  $(document).click(function() {
+    location.reload();
+  });
+  //  $('body').on('click', dataLoaded(data));
 }
 
 function getRandomElement(array){
