@@ -331,6 +331,8 @@ function peace(){
   $('#counter').hide();
   $('h1').hide();
   $('#click-to-begin').hide();
+  $('#videoTitle').hide();
+  $('#Talk').hide();
   //Ending text variable!
   let $ending = $('<div class="endingText"></div>');
   //If you have more than 2 love points in each category... Congratulations! You did great!
