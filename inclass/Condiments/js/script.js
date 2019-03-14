@@ -39,8 +39,7 @@ function dataLoaded(data){
 
   let ana = "a";
 
-  if (cat.charAt(0) === 'a'){
-    console.log("hiii");
+  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'O' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'U'){
     ana = "an";
   }
 
@@ -51,9 +50,19 @@ function dataLoaded(data){
   let room = getRandomElement(data.rooms);
     console.log(room);
 
+    let anaroom = "a";
+
+    if (room.charAt(0) === 'a' || room.charAt(0) === 'o' || room.charAt(0) === 'e' || room.charAt(0) === 'i' || room.charAt(0) === 'u'){
+      anaroom = "an";
+    }
+
+    else {
+      anaroom = "a";
+    }
+
   //  let description =
 
-    $("#description").text(condiment + " " + verb + " like " + ana + " " + cat + " in a " + room + ".");
+    $("#description").text(condiment + " " + verb + " like " + ana + " " + cat + " in " + anaroom + " " + room + ".");
 }
 
 function getRandomElement(array){

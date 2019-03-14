@@ -134,6 +134,7 @@ function setup() {
   $('#2').on('click', playB);
 }
 
+//Play Crying Baby
 $('audio#bgm')[0].play();
 //Annyang voice recognition!
 if (annyang) {
