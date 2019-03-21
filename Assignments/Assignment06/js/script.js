@@ -41,7 +41,8 @@ function dataLoaded(data){
 
   let ana = "a";
 
-  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'O' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'U'){
+  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'O' || cat.charAt(0) === 'E'
+    || cat.charAt(0) === 'I' || cat.charAt(0) === 'U'){
     ana = "an";
   }
 
@@ -54,7 +55,8 @@ function dataLoaded(data){
 
   let anaroom = "a";
 
-  if (room.charAt(0) === 'a' || room.charAt(0) === 'o' || room.charAt(0) === 'e' || room.charAt(0) === 'i' || room.charAt(0) === 'u'){
+  if (room.charAt(0) === 'a' || room.charAt(0) === 'o' || room.charAt(0) === 'e'
+    || room.charAt(0) === 'i' || room.charAt(0) === 'u'){
     anaroom = "an";
   }
 
@@ -62,16 +64,26 @@ function dataLoaded(data){
     anaroom = "a";
   }
 
-  let news =  $.getJSON('assets/newspapers.json');
+  let news =  getRandomElement(data.newspapers);
   console.log (news);
 
-  let newspap = getRandomElement(news.newspapers);
+  let the = "the";
+
+  if (news.charAt(0) === 'T' && news.charAt(1) === 'h' && news.charAt(2) === 'e'){
+    the = "";
+  }
+
+  else {
+    the = "the";
+  }
+
+  // let newspap = getRandomElement(news.newspapers);
   //let news = getRandomElement(data.newspapers);
   //console.log(news);
 
   //  let description =
 
-  let description = `${condiment} ${verb} like ${ana} ${cat} in ${anaroom} ${room}.`;
+  let description = `${condiment} ${verb} like ${ana} ${cat} in ${anaroom} ${room} reading ${the} ${news}.`;
 
   // Finally, we add it to the page and hey presto!
   $('#description').append(description);

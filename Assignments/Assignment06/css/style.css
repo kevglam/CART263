@@ -1,0 +1,25 @@
+/*********************************************
+
+This is the style file for this project.
+
+**********************************************/
+@import url('https://fonts.googleapis.com/css?family=Oswald|Titillium+Web:700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#description {
+  font-size: 65px;;
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 3em;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+#instructions {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+}
