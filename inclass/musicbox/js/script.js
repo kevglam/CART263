@@ -16,6 +16,7 @@ let synth;
 let kick;
 let snare;
 let patternIndex = 0;
+
 // preload()
 //
 // Description of preload
