@@ -2,111 +2,86 @@
 
 /*****************
 
-Drum Kit
+Title of Project
+Author Name
 
-I have created a kit that allows user to play a Drum Sequence then play a looped version of the sequence.
+This is a template. You must fill in the title,
+author, and this description to match your project!
+
 ******************/
-$(document).ready(setup);
-
 let kick;
-let snare;
-let hihat;
-let patternIndex = 0;
-let pattern = [];
-let drumTrack = 0;
+let xspeed = 2;
+let yspeed = 2;
+let xdirection = 2;
+let ydirection = 2;
+let activator = 0;
+let villager;
+let villagerArray = [];
 
-if (annyang) {
-  // Let's define our first command. First the text we expect, and then the function it should call
-  var commands = {
-    'Bulbasaur': function() {
-      $('#Bulbasaur').hide();
-    }
-  };
+// preload()
+//
+// Description of preload
 
-  // Add our commands to annyang
-  annyang.addCommands(commands);
+function preload() {
 
-  // Start listening. You can call this here, or attach this call to an event, button, etc.
-  annyang.start();
 }
+
+
+// setup()
+//
+// Description of setup
 
 function setup() {
-  // This code will run when the document is ready!
-  kick = new Pizzicato.Sound('assets/sounds/kick.wav');
-  snare = new Pizzicato.Sound('assets/sounds/snare.wav');
-  hihat = new Pizzicato.Sound('assets/sounds/hihat.wav');
+createCanvas(windowWidth,windowHeight);
+background('#000000');
+
+kick = new Pizzicato.Sound('assets/sounds/kick.wav');
+
+}
+
+function keyPressed() {
+  ///let summitTime = setTimeout(reset, 5000);
+  // Do something
+  playKick();
+  console.log(activator);
+  activator++;
+
+  ///clearTimeout(summitTime);
+  ///summitTime = setTimeout(reset, 5000);
 
 
-  $('#drums').on('click',function() {
-    if(drumTrack === 0){
-    setInterval(playPattern, 250);
+  //if(activator === 10){
+  villagerArray.push (new Villager(random(0,width),random(0,height),1,10,2,2));
+//}
+
+
+  return false; // prevent any default behaviour
+
+}
+// draw()
+//
+// Description of draw()
+
+function draw() {
+  for (let i = 0; i < villagerArray.length; i++) {
+      villagerArray[i].display();
+      villagerArray[i].move();
+      villagerArray[i].reframe();
+      //console.log("hi");
     }
-    drumTrack = 2;
-  });
-
-  $('#clean').on('click',function() {
-    pattern = [];
-  });
-
-  $('#Kick').click(function() {
-    console.log("Kick");
-    playKick();
-  });
-
-  $('#Snare').click(function() {
-    console.log("Snare");
-    playSnare();
-  });
-
-  $('#Hihat').click(function() {
-    console.log("Hihat");
-    playHihat();
-  });
+}
 
 
+
+function playKick (){
+kick.play();
 
 }
 
 
-function playKick(){
+function reset () {
 
-  kick.play();
-  pattern.push("x");
+activator = 0;
+villagerArray = [];
 
-}
-
-function playSnare(){
-
-  snare.play();
-  pattern.push("o");
-
-}
-
-function playHihat(){
-
-  hihat.play();
-  pattern.push("*");
-
-}
-
-function playPattern(){
-  let symbols = pattern[patternIndex];
-
-
-  if (symbols.indexOf('x') !== -1){
-    kick.play();
-  }
-
-  if (symbols.indexOf('o') !== -1){
-    snare.play();
-  }
-
-  if (symbols.indexOf('*') !== -1){
-    hihat.play();
-  }
-
-  patternIndex++;
-  if (patternIndex >= pattern.length) {
-    patternIndex = 0;
-  }
 }
