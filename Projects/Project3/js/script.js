@@ -17,6 +17,7 @@ let ydirection = 2;
 let activator = 0;
 let villager;
 let villagerArray = [];
+let summitTime = setTimeout(reset, 5000);
 
 // preload()
 //
@@ -40,14 +41,13 @@ kick = new Pizzicato.Sound('assets/sounds/kick.wav');
 }
 
 function keyPressed() {
-  ///let summitTime = setTimeout(reset, 5000);
-  // Do something
+
   playKick();
   console.log(activator);
   activator++;
 
-  ///clearTimeout(summitTime);
-  ///summitTime = setTimeout(reset, 5000);
+  clearTimeout(summitTime);
+  summitTime = setTimeout(reset, 5000);
 
 
   //if(activator === 10){

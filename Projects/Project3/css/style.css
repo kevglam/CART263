@@ -3,34 +3,31 @@
 This is the style file for this project.
 
 **********************************************/
-#Bulbasaur {
-color: green;
+body {
+  margin: 0;
+  padding:0;
 }
 
-#Kick {
-  font-size: 4em;
-  font-family:sans-serif;
-  background-color: #84754E;
-}
-#Snare {
-  font-size: 4em;
-  font-family:sans-serif;
-  background-color: #AF9800;
-}
-#Hihat {
-  font-size: 4em;
-  font-family:sans-serif;
-  background-color: #F2CD00;
-}
-
-#Pokelist {
-  font-size: 20px;
-  font-family: Helvetica, sans-serif;
-  text-align: center;
-}
+#top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  background-color: black;
+  color: white;
 
 
-#controls {
-  padding: 2em;
-  text-align: center;
+}
+
+#nav-border {
+  border-bottom: 1px solid darkgrey;
+  width: 100%;
+}
+
+.header-middle {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 25px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: bold;
 }
