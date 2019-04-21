@@ -12,8 +12,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 
 
 }
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  font-size: 25px;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px;
+  font-family: 'Helvetica', sans-serif;
   font-weight: bold;
 }

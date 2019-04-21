@@ -3,7 +3,7 @@
 // A class to represent food, mostly just involves the ability to be
 // a random size and to reset
 
-class Villager extends Agent {
+class Villager2 extends Agent {
 
   // Constructor
   //
@@ -11,7 +11,7 @@ class Villager extends Agent {
   // Also set a minimum and maximum size for this food object which it
   // will vary between when it resets
   constructor(x,y,minSize,maxSize,velocityx,velocityy) {
-    super(x,y,random(minSize,maxSize),'#ff4057');
+    super(x,y,random(minSize,maxSize),'#900048');
     this.minSize = minSize;
     this.maxSize = maxSize;
     this.velocityx = velocityx;
@@ -21,8 +21,8 @@ class Villager extends Agent {
   move() {
       this.x += this.velocityx;
       this.y += this.velocityy;
-      this.velocityx = random(-5,villagerArray.maxSpeed);
-      this.velocityy = random(-5,villagerArray.maxSpeed);
+      this.velocityx = random(5,villager2Array.maxSpeed);
+      this.velocityy = random(0,villager2Array.maxSpeed);
   }
 
   reframe(){
