@@ -1,30 +1,26 @@
-// Food
-//
-// A class to represent food, mostly just involves the ability to be
-// a random size and to reset
+//This script handles the visual shape that will be drawn for the Kick sound
 
-class Villager extends Agent {
+class Firework01 extends Base {
 
-  // Constructor
-  //
+  // Constructor for the circle shape that will be drawn
   // Pass arguments on to the super() constructor (e.g. for Agent)
-  // Also set a minimum and maximum size for this food object which it
-  // will vary between when it resets
   constructor(x,y,minSize,maxSize,velocityx,velocityy) {
-    super(x,y,random(minSize,maxSize),'#ff4057');
+    super(x,y,random(minSize,maxSize),'#ffde00');
     this.minSize = minSize;
     this.maxSize = maxSize;
     this.velocityx = velocityx;
     this.velocityy = velocityy;
   }
 
+  //This handles how the shape will move on screen.
+  //Based on the given velocity, the shape will move in consequence and offer a unique trajectory
   move() {
-      this.x += this.velocityx;
-      this.y += this.velocityy;
-      this.velocityx = random(-5,villagerArray.maxSpeed);
-      this.velocityy = random(-5,villagerArray.maxSpeed);
+    this.x += this.velocityx;
+    this.y += this.velocityy;
+    this.velocityx = random(-5,firework01Array.maxSpeed);
+    this.velocityy = random(-5,firework01Array.maxSpeed);
   }
-
+  //If the shape exits the screen in any of the 4 corners, respawn it randomly on the canvas.
   reframe(){
     if(this.x < 0) {
       this.x = random(0,width);
@@ -43,10 +39,7 @@ class Villager extends Agent {
     }
   }
 
-  // reset()
-  //
-  // Set position to a random location on the canvas
-  // Set the size to a random size within the limits
+  //Reset position of the shape
   reset() {
     this.x = random(0,width);
     this.y = random(0,height);

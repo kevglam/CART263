@@ -15,13 +15,8 @@ body {
   background-color: white;
   color: black;
 
-
 }
 
-#nav-border {
-  border-bottom: 1px solid darkgrey;
-  width: 100%;
-}
 
 .header-middle {
   display: flex;
@@ -30,4 +25,9 @@ body {
   font-size: 15px;
   font-family: 'Helvetica', sans-serif;
   font-weight: bold;
+}
+
+#instructions {
+  background-color: #ffffff;
+  text-align: center;
 }
