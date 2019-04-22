@@ -1,4 +1,4 @@
-Drum Prodigy Taiko!
+<b>Drum Prodigy Taiko!</b>
 
 For my interactive project, I decided to play around with music and voice. The premise for my project goes as such:
 “You are a Drum Master in the tiny village of Newindigo and have been asked to teach the newborn named Taiko.
